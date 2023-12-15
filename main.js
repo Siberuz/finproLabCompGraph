@@ -66,11 +66,11 @@ scene.add(treasureMesh);
 
 //orbit controls
 window.addEventListener("keydown", (e) => {
-  switch (e.key) {
-    case " ":
-      currentCamera = currentCamera === camera1 ? orbitCamera : camera1;
+  switch(e.key){
+    case" ": currentCamera = currentCamera === camera1 ? orbitCamera:camera1;break;
   }
 });
+
 
 //render
 function render() {
