@@ -8,7 +8,6 @@ import { OrbitControls } from "./three.js/examples/jsm/controls/OrbitControls.js
 import { FontLoader } from "./three.js/examples/jsm/loaders/FontLoader.js";
 import { TextGeometry } from "./three.js/examples/jsm/geometries/TextGeometry.js";
 
-
 // Scene
 let scene = new THREE.Scene();
 
@@ -69,97 +68,87 @@ scene.add(treasureMesh);
 
 //orbit controls
 window.addEventListener("keydown", (e) => {
-  switch(e.key){
-    case" ": currentCamera = currentCamera === camera1 ? orbitCamera:camera1;break;
+  switch (e.key) {
+    case " ":
+      currentCamera = currentCamera === camera1 ? orbitCamera : camera1;
+      break;
   }
 });
 
-
-
 //SKYBOX
-function processSkybox(){
-  const loader = new THREE.TextureLoader()
-  const boxMaterialArr = []
-  
-  boxMaterialArr.push(
-      new THREE.MeshBasicMaterial({
-          map: loader.load('./assets/skybox/right.png'),
-          side: THREE.DoubleSide
-      })
-  )
-  boxMaterialArr.push(
-      new THREE.MeshBasicMaterial({
-          map: loader.load('./assets/skybox/left.png'),
-          side: THREE.DoubleSide
-      })
-  )
-  boxMaterialArr.push(
-      new THREE.MeshBasicMaterial({
-          map: loader.load('./assets/skybox/top.png'),
-          side: THREE.DoubleSide
-      })
-  )
-  boxMaterialArr.push(
-      new THREE.MeshBasicMaterial({
-          map: loader.load('./assets/skybox/bottom.png'),
-          side: THREE.DoubleSide
-      })
-  )
-  boxMaterialArr.push(
-      new THREE.MeshBasicMaterial({
-          map: loader.load('./assets/skybox/front.png'),
-          side: THREE.DoubleSide
-      })
-  )
-  boxMaterialArr.push(
-      new THREE.MeshBasicMaterial({
-          map: loader.load('./assets/skybox/back.png'),
-          side: THREE.DoubleSide
-      })
-  )
+function processSkybox() {
+  const loader = new THREE.TextureLoader();
+  const boxMaterialArr = [];
 
-  const skyboxGeo = new THREE.BoxGeometry(800, 800, 800)
-  const skyboxMesh = new THREE.Mesh(skyboxGeo, boxMaterialArr)
+  boxMaterialArr.push(
+    new THREE.MeshBasicMaterial({
+      map: loader.load("./assets/skybox/right.png"),
+      side: THREE.DoubleSide,
+    })
+  );
+  boxMaterialArr.push(
+    new THREE.MeshBasicMaterial({
+      map: loader.load("./assets/skybox/left.png"),
+      side: THREE.DoubleSide,
+    })
+  );
+  boxMaterialArr.push(
+    new THREE.MeshBasicMaterial({
+      map: loader.load("./assets/skybox/top.png"),
+      side: THREE.DoubleSide,
+    })
+  );
+  boxMaterialArr.push(
+    new THREE.MeshBasicMaterial({
+      map: loader.load("./assets/skybox/bottom.png"),
+      side: THREE.DoubleSide,
+    })
+  );
+  boxMaterialArr.push(
+    new THREE.MeshBasicMaterial({
+      map: loader.load("./assets/skybox/front.png"),
+      side: THREE.DoubleSide,
+    })
+  );
+  boxMaterialArr.push(
+    new THREE.MeshBasicMaterial({
+      map: loader.load("./assets/skybox/back.png"),
+      side: THREE.DoubleSide,
+    })
+  );
 
-  scene.add(skyboxMesh)
+  const skyboxGeo = new THREE.BoxGeometry(800, 800, 800);
+  const skyboxMesh = new THREE.Mesh(skyboxGeo, boxMaterialArr);
+
+  scene.add(skyboxMesh);
 }
-
 
 //TEXT
-const fontLoader = new FontLoader()
+const fontLoader = new FontLoader();
 const color1 = new THREE.MeshPhongMaterial({
-  color:"0xFF0000"
-})
+  color: "0xFF0000",
+});
 const color2 = new THREE.MeshPhongMaterial({
-  color:"0x990000"
-})
+  color: "0x990000",
+});
 
-fontLoader.load('./three.js/examples/fonts/helvetiker_bold.typeface.json'),(font) => {
-  
-  //geotext
-  const geotext = new TextGeometry(
-    "Don't click me!",{
+fontLoader.load(
+  "./three.js/examples/fonts/helvetiker_bold.typeface.json",
+  (font) => {
+    const geotext = new TextGeometry("Don't click me!", {
       font: font,
       size: 2,
-      height:12
-    }
+      height: 0.5,
+    });
 
-  )
-
-
-
-  //mesh
-  const text = new THREE.Mesh(geotext,[color1,color2])
-  text.position.set(-10,18,0)
-  text.castShadow = true;
-  text.receiveShadow = true;
-  scene.add(text)
-
-
-}
-
-
-
+    //mesh
+    const text = new THREE.Mesh(geotext, [color1, color2]);
+    text.position.set(-10, 18, 0);
+    text.castShadow = true;
+    text.receiveShadow = true;
+    scene.add(text);
+  }
+);
 
 //render
 function render() {
@@ -167,8 +156,7 @@ function render() {
   renderer.render(scene, currentCamera);
 }
 
-window.addEventListener("load", function(){
-  processSkybox()
-  render()
-})
-
+window.addEventListener("load", function () {
+  processSkybox();
+  render();
+});
