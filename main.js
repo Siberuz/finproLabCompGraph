@@ -1,7 +1,7 @@
 import * as THREE from "./three.js/build/three.module.js";
 import { GLTFLoader } from "./three.js/examples/jsm/loaders/GLTFLoader.js";
 import { pilarList } from "./components/pilar.js";
-import { treasureGeomtery, treasureMaterial } from "./components/treasure.js"
+import { treasureGeomtery, treasureMaterial } from "./components/treasure.js";
 import { spotLightList, spotLightListTrigger } from "./components/spotlight.js";
 import { groundMesh } from "./components/ground.js";
 import { OrbitControls } from "./three.js/examples/jsm/controls/OrbitControls.js";
@@ -155,29 +155,29 @@ fontLoader.load(
   }
 );
 
-window.addEventListener("click", function(e){
-  //cari koordinat mouse
-  const x = (e.clientX/this.window.innerWidth)*2-1
-  const y = (-e.clientY/this.window.innerHeight)*2+1
-  const cursor = new THREE.Vector2(x,y)
-  const raycast = new THREE.Raycaster()
-  raycast.setFromCamera(cursor,currentCamera)
-  
-  //dapatkan objek yang kena collision dg raycast
-  const intersect = raycast.intersectObject(treasureMesh)
-  if(intersect.length > 0){
-    scene.add(spotLightListTrigger[0,1])
-    
-    spotLightList.forEach(e => {
+window.addEventListener("click", function (e) {
+  const x = (e.clientX / this.window.innerWidth) * 2 - 1;
+  const y = (-e.clientY / this.window.innerHeight) * 2 + 1;
+  const cursor = new THREE.Vector2(x, y);
+  const raycast = new THREE.Raycaster();
+  raycast.setFromCamera(cursor, currentCamera);
+
+  const intersect = raycast.intersectObject(treasureMesh);
+  if (intersect.length > 0) {
+    scene.add(spotLightListTrigger[(0, 1)]);
+
+    spotLightList.forEach((e) => {
       e.color.set(0xff0000);
-    })
+    });
 
     pilarList[0].rotation.set(Math.PI / 2, 0, 0);
     pilarList[1].rotation.set(Math.PI / 2, 0, 0);
     pilarList[0].position.set(15, 3, 30);
     pilarList[1].position.set(-15, 3, 30);
+
+    scene.remove(treasureMesh);
   }
-})
+});
 
 //render
 function render() {
