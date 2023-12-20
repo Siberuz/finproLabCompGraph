@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cosmion</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script type="module" src="/3D/sun.js"></script>
+    <script type="module" src="/3D/jupiter.js"></script>
+    <script type="module" src="/3D/earth.js"></script>
+    <script type="module" src="/3D/mars.js"></script>
+    <script type="module" src="/3D/neptune.js"></script>
+    <script type="module" src="/3D/uranus.js"></script>
+    <script type="module" src="/3D/venus.js"></script>
+    <script type="module" src="/3D/mercury.js"></script>
+    <script type="module" src="/3D/saturn.js"></script>
+    <script type="module" src="home.js"></script>
+    <script type="module" src="solarsys.js"></script>
+    <link rel="stylesheet" href="carousel-style.css" />
+  </head>
+  <body>
+    <nav class="navbar opacitynav navbar-expand-lg fixed-top">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-flex align-items-center justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="solarsys.html">Solar System</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="planet" class="3d-view">
+      <div id="carousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel" data-slide-to="1"></li>
+          <li data-target="#carousel" data-slide-to="2"></li>
+          <li data-target="#carousel" data-slide-to="3"></li>
+          <li data-target="#carousel" data-slide-to="4"></li>
+          <li data-target="#carousel" data-slide-to="5"></li>
+          <li data-target="#carousel" data-slide-to="6"></li>
+          <li data-target="#carousel" data-slide-to="7"></li>
+          <li data-target="#carousel" data-slide-to="8"></li>
+        </ul>
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active" id="sunId">
+            <div
+              class="contianer-carousel d-flex justify-content-center align-items-center"
+            >
+              <div id="matahari-container"></div>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Sun</h3>
+              <p>
+                The Sun is a massive, luminous ball of hot, ionized gas at the center of our solar system, primarily composed of hydrogen and helium. Through nuclear fusion, it generates intense heat and light, providing energy essential for life on Earth. Its gravity holds the planets in orbit, and its magnetic activity influences space weather. The sun plays a pivotal role in shaping the dynamics of our solar system.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="contianer-carousel d-flex justify-content-center align-items-center"
+            >
+              <div id="mercury-container"></div>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Mercury</h3>
+              <p>
+                Mercury, the smallest and closest planet to the sun in our solar system, is a barren, rocky world with extreme temperature variations. Its surface is marked by craters, cliffs, and plains, and it lacks a significant atmosphere to regulate temperatures. Mercury's days are scorching hot, while its nights are frigid, making it a harsh environment for life. Despite its challenges, Mercury's unique characteristics provide valuable insights into the formation and evolution of rocky planets.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="contianer-carousel d-flex justify-content-center align-items-center">
+              <div id="venus-container"></div>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Venus</h3>
+              <p>
+                Venus, the second planet from the sun, is a scorching world with a thick atmosphere primarily composed of carbon dioxide. Its surface is marked by volcanic plains and highland regions, shrouded in dense clouds of sulfuric acid, creating a runaway greenhouse effect. Venus experiences extreme temperatures, making it the hottest planet in our solar system. Studying Venus provides valuable clues about the impacts of climate change and the divergent evolutionary paths of Earth-like planets.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="contianer-carousel d-flex justify-content-center align-items-center">
+              <div id="earth-container"></div>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Earth</h3>
+              <p>
+                Earth, the third planet from the sun, is a diverse and dynamic world with a unique combination of land, water, and atmosphere conducive to life. Featuring a rich tapestry of ecosystems, Earth is home to a vast array of organisms. Its atmosphere, composed mainly of nitrogen and oxygen, sustains life and moderates temperatures. The planet's geology is shaped by tectonic activity and erosion, while its magnetic field protects against solar winds. Earth's delicate balance of conditions makes it an ideal habitat for a wide range of life forms, including humans.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="contianer-carousel d-flex justify-content-center align-items-center">
+              <div id="mars-container"></div>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Mars</h3>
+              <p>
+                Mars, the fourth planet from the sun, is a cold and arid world known for its reddish appearance due to iron oxide on its surface. The planet features expansive deserts, towering volcanoes, and a canyon system, including the largest known canyon, Valles Marineris. Mars once had liquid water, evidenced by ancient river valleys and polar ice caps. Ongoing exploration seeks signs of past life and assesses the potential for future human colonization. Understanding Mars contributes to our broader knowledge of planetary evolution and the possibilities for extraterrestrial habitats.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="contianer-carousel d-flex justify-content-center align-items-center"
+            >
+              <div id="jupiter-container"></div>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Jupiter</h3>
+              <p>
+                Jupiter, the largest planet in our solar system, is a gas giant primarily composed of hydrogen and helium. It boasts a dynamic atmosphere with prominent bands of clouds, and its iconic Great Red Spot is a massive storm system. Jupiter has a strong magnetic field and numerous moons, including the four largest known as the Galilean moons. Its immense gravity influences the orbits of nearby planets, playing a crucial role in the stability of the solar system. Studying Jupiter helps scientists gain insights into planetary formation and the diverse environments within our cosmic neighborhood.
+              </p>
+            </div>
+          </div>
+         
+          
+          <div class="carousel-item">
+            <div
+              class="contianer-carousel d-flex justify-content-center align-items-center"
+            >
+              <div id="saturn-container"></div>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Saturn</h3>
+              <p>
+                Saturn, the sixth planet from the sun, is a magnificent gas giant renowned for its stunning ring system composed of ice particles and rocky debris. Its distinctive rings are divided into numerous intricate bands. Saturn has a predominantly hydrogen and helium atmosphere, and its swirling cloud patterns create a visually captivating appearance. The planet boasts a diverse family of at least 82 moons, with Titan being the largest—a world with a thick atmosphere and lakes of liquid methane and ethane. Studying Saturn enhances our understanding of planetary ring dynamics and the conditions fostering moon formation in our solar system.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="contianer-carousel d-flex justify-content-center align-items-center"
+            >
+              <div id="uranus-container"></div>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Uranus</h3>
+              <p>
+                Uranus, the seventh planet from the sun, is an ice giant distinguished by its unique sideways rotation, likely the result of a past collision. It features a thick atmosphere of hydrogen, helium, and methane, giving it a blue-green hue. Uranus has a set of faint rings and a system of 27 known moons. Its extreme axial tilt results in peculiar seasons, with each pole experiencing 42 Earth years of continuous sunlight or darkness. The mysteries surrounding Uranus offer valuable clues about the complex processes influencing the dynamics of distant planetary systems.
+              </p>
+            </div>
+          </div>
+         
+          <div class="carousel-item">
+            <div
+              class="contianer-carousel d-flex justify-content-center align-items-center"
+            >
+              <div id="neptune-container"></div>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Neptune</h3>
+              <p>
+                Neptune, the eighth and farthest planet from the sun, is a distant ice giant with a striking deep-blue coloration attributed to methane in its atmosphere. Exhibiting strong winds and a dynamic weather system, Neptune features the fastest recorded wind speeds in the solar system. The planet has a set of faint rings and a diverse collection of 14 known moons, including Triton, which orbits in a retrograde direction. Neptune's composition and behavior provide essential insights into the outer reaches of our solar system and the formation of icy, giant planets.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <a
+          class="carousel-control-prev"
+          href="#carousel"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carousel"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" ariahidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
