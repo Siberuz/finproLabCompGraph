@@ -16,6 +16,6 @@ export let spotLightList = [
 ];
 
 export let spotLightListTrigger = [
-  spotlightCreate(0xff0000, 0.8, 50, 50, 0, 0),
-  spotlightCreate(0xff0000, 0.8, 50, -50, 0, 0),
+  spotlightCreate(0xff0000, 0.8, 50, 6, 13, 0),
+  spotlightCreate(0xff0000, 0.8, 50, -6, 13, 0),
 ];

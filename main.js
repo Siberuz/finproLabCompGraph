@@ -25,6 +25,7 @@ let camera1 = new THREE.PerspectiveCamera(
   window.innerWidth / window.innerHeight
 );
 camera1.position.set(0, 20, 70);
+camera1.lookAt(0,0,0)
 
 let orbitCamera = new THREE.PerspectiveCamera(
   45,
@@ -164,6 +165,10 @@ window.addEventListener("click", function (e) {
 
   const intersect = raycast.intersectObject(treasureMesh);
   if (intersect.length > 0) {
+
+    spotLightListTrigger[0].lookAt(50,0,0)
+    spotLightListTrigger[1].lookAt(-50,0,0)
+
     scene.add(spotLightListTrigger[(0, 1)]);
 
     spotLightList.forEach((e) => {
